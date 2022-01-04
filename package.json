@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "express": "^4.17.2",
+    "init": "^0.1.2",
+    "node": "^17.3.0",
+    "nodemon": "^2.0.15"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "dailyastronomy",
+  "description": "A web page which will provide Astronomy related images using different API's",
+  "version": "1.0.0",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pallavikumarimdb/dailyAstronomy.git"
+  },
+  "author": "Pallavi Kumari",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pallavikumarimdb/dailyAstronomy/issues"
+  },
+  "homepage": "https://github.com/Pallavikumarimdb/dailyAstronomy#readme"
+}
