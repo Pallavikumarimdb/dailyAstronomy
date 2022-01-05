@@ -4,7 +4,7 @@ const bodyParser = require("body-parser");
 
 const app = express();
 
-app.use(bodyParser.urlencoded({extebded: true}));
+app.use(bodyParser.urlencoded({extended: true}));
 
 app.get("/", function(req, res){
   res.sendFile(__dirname + "/index.html");
@@ -13,21 +13,26 @@ app.get("/", function(req, res){
 app.post("/", function(req, res){
 
   const userQuery1=req.body.dateInput;
-  const url = "https://api.nasa.gov/planetary/apod?api_key=0EaIxc1SNCVWZvhDminI5LKyzVJc7LhPaVc26wKP&start_date="+"userQuery1"
+  const url = "https://api.nasa.gov/planetary/apod?api_key=0EaIxc1SNCVWZvhDminI5LKyzVJc7LhPaVc26wKP&start_date="+userQuery1;
 
-  https.get(url,  function(responce){
-    console.log(responce.statusCode);
+  https.get(url,  function(response){
+    console.log(response.statusCode);
 
-    responce.on("data", function(data){
+    response.on("data", function(data){
       const astronomyData = JSON.parse(data);
       // const temp = astronomyData.main.temp;
       // const astronomyDescription = astronomyData.apod[0].explanation
       // const image = astronomyData.apod[0].url
 
       const imageURL = "https://apod.nasa.gov/apod/image/2201/RheaJanus_Cassini_1020.jpg"
-      res.write("<h1><p> Astronomy Picture of the day "+imageURL+"</p></h1>");
-      // res.write("<img src="image">");
-      res.send()
+      // res.write("<h1><p> Astronomy Picture of the day "+imageURL+"</p></h1>");
+      // res.write("<img src="+imageURL+">");
+
+
+      let html = '<img src="' + imageURL +'" width="500" height="500">';
+      // html += '<img src="' + imageURL +'" width="50" height="50">';
+      // same way we can add multiple lines
+      res.send(html)
     })
   })
 
