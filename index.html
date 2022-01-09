@@ -3,13 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="/css/style.css" rel="stylesheet">
   </head>
   <body>
-    <form class="" action="/" method="post">
-      <label for="dateInput">Enter date</label>
-      <input id ="dateInput" type="text" name="" value="" placeholder="YYYY-MM-DD">
-
-      <button type="submit" name="button">Submit</button>
+    <form class="form-as" action="/" method="post">
+      <p class="heading">
+        Get Daily Astronomy Update "Picture of the Day" from NASA API Directly
+      </p>
+        <img class="mb-4 img1" src="/Assets/2.png" alt="" width="72" height="72"><br />
+      <label for="date"><p class="ennrP">Enter date</p></label>
+      <input id ="date" type="text" name="date" value="" class="form-control top" placeholder="YYYY-MM-DD">
+      <button type="submit" name="button" class="bd-placeholder-img btn">Submit</button>
     </form>
   </body>
 </html>
