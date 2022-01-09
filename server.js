@@ -28,6 +28,26 @@ app.post("/", function(req, res){
         res.write("<h3><p> Description: " + explanation + "</p></h3>");
         res.write("<h1><p> Image: <img src='" + astronomyData[0].hdurl + "' style='width:30%' /></p></h1>");
         		res.send();
+    })
+  })
+
+})
+
+
+app.listen(3000, function() {
+  console.log(" Server is up and Running on port 3000");
+})
+
+
+
+
+
+
+
+
+
+
+
 
 
         //
@@ -45,12 +65,3 @@ app.post("/", function(req, res){
         //  // html = '<img src="' + image +'" width="50" height="50">';
         // // same way we can add multiple lines
         // res.send(html)
-    })
-  })
-
-})
-
-
-app.listen(3000, function() {
-  console.log(" Server is up and Running on port 3000");
-})
