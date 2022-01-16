@@ -1,6 +1,6 @@
 html,
 body {
-  height: 80%;
+  height: 100%;
 
 }
 
@@ -9,9 +9,8 @@ body {
   display: flex;
   -ms-flex-align: center;
   align-items: center;
-  padding-top: 10%;
+  /* padding-top: 2%; */
   background-color: antiquewhite
-  /* background-color:dimgrey; */
 }
 .heading{
   margin-top: 10px;
