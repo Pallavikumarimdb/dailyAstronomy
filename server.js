@@ -18,10 +18,16 @@ app.post("/", function(req, res){
 
   https.get(url1,  function(response){
     console.log(response.statusCode);
-    response.on("data", function(data){
-      const astronomyData = JSON.parse(data);
-        const title = astronomyData[0].title;
+
+    let result = '';
+        response.on("data", (data) =>{
+            result += data;
+        });
+
+    response.on("end", () => {
+      const astronomyData = JSON.parse(result);
         const explanation= astronomyData[0].explanation;
+        const title = astronomyData[0].title;
         console.log(title);
         //res.render("result", {title1: title});
         // res.write("<h1><p> Title: " + title + "</p></h1>");
@@ -41,6 +47,24 @@ app.listen(3000, function() {
 
 
 
+
+// You need to wait for the full response to come in - it's a large file, so it may not come in all at once:
+//
+// https.get(url, function(response){
+//     let result = '';
+//     response.on("data", (data) =>{
+//         result += data;
+//     });
+//     response.on('end', () => {
+//         const pokemon = JSON.parse(result);
+//         console.log(pokemon);
+//     });
+// })
+
+// 0.date
+// 0.explanation
+// 0.hdurl
+// 0.title
 
 
 
