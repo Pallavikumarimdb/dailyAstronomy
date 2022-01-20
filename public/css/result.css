@@ -1,0 +1,21 @@
+.section2 {
+  /* background-image: url('assets_aboutassets_Introimg7.png') 0 0; */
+  background-color: #E0FFFF;
+}
+
+.sec2-container {
+  padding: 3% 4%;
+}
+
+.sec2-container-box {
+  padding: 30px;
+}
+
+.sec2heading1 {
+  margin-top: 3%;
+}
+
+.sec2img {
+  padding-left: 8%;
+  width: 100%;
+}

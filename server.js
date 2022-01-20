@@ -4,10 +4,11 @@ const bodyParser = require("body-parser");
 
 const app = express();
 app.use(express.static("public"));
+app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.get("/", function(req, res){
-  res.sendFile(__dirname + "/index.html");
+  res.render('index');
 })
 
 app.post("/", function(req, res){
@@ -17,17 +18,16 @@ app.post("/", function(req, res){
 
   https.get(url1,  function(response){
     console.log(response.statusCode);
-
     response.on("data", function(data){
       const astronomyData = JSON.parse(data);
         const title = astronomyData[0].title;
         const explanation= astronomyData[0].explanation;
-
-
-        res.write("<h1><p> Title: " + title + "</p></h1>");
-        res.write("<h3><p> Description: " + explanation + "</p></h3>");
-        res.write("<h1><p> Image: <img src='" + astronomyData[0].hdurl + "' style='width:30%' /></p></h1>");
-        		res.send();
+        console.log(title);
+        //res.render("result", {title1: title});
+        // res.write("<h1><p> Title: " + title + "</p></h1>");
+        // res.write("<h3><p> Description: " + explanation + "</p></h3>");
+        // res.write("<h1><p> Image: <img src='" + astronomyData[0].hdurl + "' style='width:30%' /></p></h1>");
+        res.render("result", {expGet: explanation, title1: title, imgUrl:astronomyData[0].hdurl });
     })
   })
 
